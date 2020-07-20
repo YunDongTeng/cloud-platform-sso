@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace:填写映射当前的Mapper接口，所有的增删改查的参数和返回值类型，
+		就可以直接填写缩写，不区分大小写，直接通过方法名去找类型-->
+<mapper namespace="com.cloud.sso.mapper.ApplicationMapper">
+    <select id="getByClientId" parameterType="String" resultType="com.cloud.sso.entity.Application">
+        select id, client_id as clientId, client_secret as clientSecret, app_name as appName,
+        resource_ids as resourceIds,secret_required as secretRequired, scope, grant_type as grantType,
+        redirect_uri as redirectUri,auto_approve as autoApprove,access_token_validity_second as accessTokenValiditySecond,
+        refresh_token_validity_second as refreshTokenValiditySecond
+        from sys_application where client_id = #{clientId}
+    </select>
+</mapper>

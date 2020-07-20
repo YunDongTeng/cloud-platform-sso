@@ -1,0 +1,26 @@
+spring:
+  datasource:
+    url: jdbc:mysql://122.51.148.46:3306/cloud-sso?useUnicode=true&characterEncoding=utf8&useSSL=false
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: 123qwe
+  thymeleaf:
+    cache: false
+    enabled: true
+    mode: HTML
+    prefix: classpath:/templates/
+    encoding: UTF-8
+    servlet:
+      content-type: text/html
+    suffix: .html
+  redis:
+    host: 122.51.148.46
+    port: 6379
+    password: 123qwe
+logging:
+  config: classpath:logback-spring.xml
+  file:
+    path: ./logs
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.slf4j.Slf4jImpl
